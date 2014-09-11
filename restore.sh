@@ -110,6 +110,9 @@ if [ "$version" = "1" ]; then
 	RESTOREDIR=$RESTOREDIR/backup_"$backupversion"
 	backupdefault=0
 else
+	if [ ! -d $RESTOREDIR/_backup_default ]; then
+		mkdir $RESTOREDIR/_backup_default
+	fi
 	RESTOREDIR=$RESTOREDIR/_backup_default
 	backupdefault=1
 fi
